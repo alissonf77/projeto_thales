@@ -37,7 +37,7 @@ tel
 
 function rg (){
 read -p 'RG: (Ex. 99.999.999-0) :' rg
-if [[ $(echo $rg | grep -E '^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-[a-zA-Z0-9]{1}$') ]]; then
+if [[ $(echo $rg | grep -E '^[0-9]{2}(\.[0-9]{3}){2}-[a-zA-Z0-9]{1}$') ]]; then
 	echo 'RG Válido.'
 else
 	echo 'RG Inválido. Tente Novamente.' && rg
@@ -47,7 +47,7 @@ rg
 
 function cpf (){
 read -p 'CPF: (Ex. 999.999.999-99) :' cpf
-if [[ $(echo $cpf | grep -E '^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$') ]]; then
+if [[ $(echo $cpf | grep -E '^[0-9]{3}(\.[0-9]{3}){2}-[0-9]{2}$') ]]; then
 	echo 'CPF Válido.'
 else
 	echo 'CPF Inválido. Tente Novamente.' && cpf
@@ -57,7 +57,7 @@ cpf
 
 function data (){
 read -p 'Data de Nascimento: (dd/mm/aaaa) :' data
-if [[ $(echo $data | grep -E '^(0[1-9]|[1-2][0-9]|3[0-1])[/](0[1-9]|1[0-2])[/][0-9]{4}$') ]]; then
+if [[ $(echo $data | grep -E '^(0[1-9]|[1-2][0-9]|3[0-1])[/](0[1-9]|1[0-2])[/](19[0-9]{2}|200[0-9]|201[0-8])$') ]]; then
 	echo 'Data Válida.'
 else
 	echo 'Data Inválida. Tente Novamente.' && data
@@ -67,7 +67,7 @@ data
 
 function ip (){ 
 read -p 'IP: (Ex. 192.168.0.0) :' ip
-if [[ $(echo $ip | grep -E '^(((([2]([5][0-5]|[0-4][0-9])|[0-9][0-9])|[0-9])\.)|(1[0-9][0-9]\.)){3}((([2]([5][0-5]|[0-4][0-9])|[0-9][0-9])|[0-9])|[1][0-9][0-9])$') ]]; then
+if [[ $(echo $ip | grep -E '^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])){3}$') ]]; then
 	echo 'IP Válido.'
 else
 	echo 'IP Inválido. Tente Novamente.' && ip
@@ -77,7 +77,7 @@ ip
 
 function mask (){
 read -p 'Máscara: (Ex. 255.255.255.0) :' mask
-if [[ $(echo $mask | grep -E '^(((([2]([5][0-5]|[0-4][0-9])|[0-9][0-9])|[0-9])\.)|(1[0-9][0-9]\.)){3}((([2]([5][0-5]|[0-4][0-9])|[0-9][0-9])|[0-9])|[1][0-9][0-9])$') ]]; then
+if [[ $(echo $mask | grep -E '^([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\.([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])){3}$') ]]; then
 	echo 'Máscara Válida.'
 else
 	echo 'Máscara Inválida. Tente Novamente.' && mask
